@@ -52,9 +52,11 @@
 #ifdef G4_USE_FLUKA
 #  include "FLUKAInelasticScatteringXS.hh"
 #  include "FLUKAHadronInelasticPhysicsConstructor.hh"
+#  include "FLUKANuclearInelasticModel.hh"
 #  include "FLUKAParticleTable.hh"
 #  include "G4Alpha.hh"
 #  include "G4Deuteron.hh"
+#  include "G4HadronicInteraction.hh"
 #  include "G4HadronInelasticProcess.hh"
 #  include "G4He3.hh"
 #  include "G4ProcessManager.hh"
@@ -76,20 +78,24 @@
 #ifdef G4_USE_FLUKA
 namespace
 {
-class FLUKALightIonCrossSections final : public G4VPhysicsConstructor
+class FLUKALightIonInelasticPhysics final : public G4VPhysicsConstructor
 {
   public:
-    FLUKALightIonCrossSections() : G4VPhysicsConstructor("FLUKA light-ion cross sections") {}
+    FLUKALightIonInelasticPhysics() : G4VPhysicsConstructor("FLUKA light-ion inelastic physics") {}
 
     void ConstructParticle() override {}
 
     void ConstructProcess() override
     {
       static auto* crossSection = new FLUKAInelasticScatteringXS();
-      ReplaceCrossSection(G4Deuteron::Deuteron(), "dInelastic", crossSection);
+      static auto* finalStateModel = new FLUKANuclearInelasticModel();
       ReplaceCrossSection(G4Triton::Triton(), "tInelastic", crossSection);
-      ReplaceCrossSection(G4He3::He3(), "He3Inelastic", crossSection);
-      ReplaceCrossSection(G4Alpha::Alpha(), "alphaInelastic", crossSection);
+      ReplaceInelasticProcess(G4Deuteron::Deuteron(), "dInelastic", crossSection,
+                              finalStateModel);
+      ReplaceInelasticProcess(G4He3::He3(), "He3Inelastic", crossSection,
+                              finalStateModel);
+      ReplaceInelasticProcess(G4Alpha::Alpha(), "alphaInelastic", crossSection,
+                              finalStateModel);
     }
 
   private:
@@ -99,20 +105,50 @@ class FLUKALightIonCrossSections final : public G4VPhysicsConstructor
       auto* manager = particle->GetProcessManager();
       auto* processes = manager == nullptr ? nullptr : manager->GetProcessList();
       if (processes == nullptr) {
-        G4Exception("FLUKALightIonCrossSections::ConstructProcess", "Hadr03Fluka001",
+        G4Exception("FLUKALightIonInelasticPhysics::ConstructProcess", "Hadr03Fluka001",
                     FatalException, ("No process list found for " + particle->GetParticleName()).c_str());
       }
 
       for (G4int i = 0; i < manager->GetProcessListLength(); ++i) {
         auto* process = (*processes)[i];
         if (process->GetProcessName() == name) {
-          // FLUKA's dataset declares coverage for all atoms and energies, so
-          // Geant4 clears the previous ion cross-section datasets here.
+          // FLUKA's dataset covers all atoms and energies, replacing the
+          // Geant4 ion cross-section datasets for this process.
           static_cast<G4HadronInelasticProcess*>(process)->AddDataSet(crossSection);
           return;
         }
       }
-      G4Exception("FLUKALightIonCrossSections::ConstructProcess", "Hadr03Fluka002",
+      G4Exception("FLUKALightIonInelasticPhysics::ConstructProcess", "Hadr03Fluka002",
+                  FatalException, ("Could not find " + name + " for " + particle->GetParticleName()).c_str());
+    }
+
+    static void ReplaceInelasticProcess(G4ParticleDefinition* particle, const G4String& name,
+                                        G4VCrossSectionDataSet* crossSection,
+                                        G4HadronicInteraction* finalStateModel)
+    {
+      auto* manager = particle->GetProcessManager();
+      auto* processes = manager == nullptr ? nullptr : manager->GetProcessList();
+      if (processes == nullptr) {
+        G4Exception("FLUKALightIonInelasticPhysics::ConstructProcess", "Hadr03Fluka003",
+                    FatalException, ("No process list found for " + particle->GetParticleName()).c_str());
+      }
+
+      for (G4int i = 0; i < manager->GetProcessListLength(); ++i) {
+        auto* process = (*processes)[i];
+        if (process->GetProcessName() == name) {
+          // Replace Geant4's ion process as well as its model list. Merely adding
+          // the FLUKA model would leave overlapping Geant4 models eligible to
+          // generate the final state.
+          manager->RemoveProcess(process);
+
+          auto* flukaProcess = new G4HadronInelasticProcess(name, particle);
+          flukaProcess->AddDataSet(crossSection);
+          flukaProcess->RegisterMe(finalStateModel);
+          manager->AddDiscreteProcess(flukaProcess);
+          return;
+        }
+      }
+      G4Exception("FLUKALightIonInelasticPhysics::ConstructProcess", "Hadr03Fluka004",
                   FatalException, ("Could not find " + name + " for " + particle->GetParticleName()).c_str());
     }
 };
@@ -166,9 +202,9 @@ PhysicsList::PhysicsList()
   //
 #ifdef G4_USE_FLUKA
   RegisterPhysics(new G4IonPhysicsXS(verb));
-  // Keep Geant4's validated ion final-state models and use FLUKA for the
-  // inelastic cross sections of the light ions.
-  RegisterPhysics(new FLUKALightIonCrossSections());
+  // Use FLUKA for both inelastic cross sections and final states of d, He3,
+  // and alpha. Triton keeps its Geant4 final-state model with a FLUKA cross section.
+  RegisterPhysics(new FLUKALightIonInelasticPhysics());
 #else
   RegisterPhysics(new G4IonPhysicsXS(verb));
 #endif

@@ -1219,6 +1219,7 @@ CMakeFiles/Hadr03.dir/src/PhysicsList.cc.o: \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4Physics2DVector.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4Physics2DVector.icc \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAHadronInelasticPhysicsConstructor.hh \
+  /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKANuclearInelasticModel.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_bridges/FLUKAParticleTable.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronInelasticProcess.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4ProcessManager.hh \

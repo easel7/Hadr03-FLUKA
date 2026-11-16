@@ -8787,7 +8787,6 @@ CMakeFiles/Hadr03.dir/src/PhysicsList.cc.o
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronPhysicsShielding.hh
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicException.hh
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicInteraction.hh
- /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicParameters.hh
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicProcess.hh
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicProcessType.hh
  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4He3.hh
@@ -8964,6 +8963,7 @@ CMakeFiles/Hadr03.dir/src/PhysicsList.cc.o
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_bridges/FLUKAParticleTable.hh
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAHadronInelasticPhysicsConstructor.hh
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAInelasticScatteringXS.hh
+ /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKANuclearInelasticModel.hh
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/GammaNuclearPhysics.hh
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/GammaNuclearPhysicsLEND.hh
  /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/PhysicsList.hh

@@ -8779,7 +8779,6 @@ CMakeFiles/Hadr03.dir/src/PhysicsList.cc.o: /Users/xiongzheng/software/geant4/ex
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronPhysicsShielding.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicException.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicInteraction.hh \
-  /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicParameters.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicProcess.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicProcessType.hh \
   /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4He3.hh \
@@ -8956,6 +8955,7 @@ CMakeFiles/Hadr03.dir/src/PhysicsList.cc.o: /Users/xiongzheng/software/geant4/ex
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_bridges/FLUKAParticleTable.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAHadronInelasticPhysicsConstructor.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAInelasticScatteringXS.hh \
+  /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKANuclearInelasticModel.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/GammaNuclearPhysics.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/GammaNuclearPhysicsLEND.hh \
   /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include/PhysicsList.hh
@@ -14669,6 +14669,8 @@ CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o: /Users/xiongzheng/software/geant4
 
 /Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/src/PrimaryGeneratorAction.cc:
 
+/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKANuclearInelasticModel.hh:
+
 /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAInelasticScatteringXS.hh:
 
 /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list/FLUKAHadronInelasticPhysicsConstructor.hh:
@@ -14685,8 +14687,6 @@ CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o: /Users/xiongzheng/software/geant4
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4Physics2DVector.hh:
 
-/Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4NuclideTable.hh:
-
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4LeptonConstructor.hh:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4IsotopeProperty.hh:
@@ -14698,10 +14698,6 @@ CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o: /Users/xiongzheng/software/geant4
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/remove.h:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4IonPhysicsPHP.hh:
-
-/Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4THnManager.hh:
-
-/Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronicParameters.hh:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4HadronPhysicsQGSP_BIC_AllHP.hh:
 
@@ -14740,6 +14736,8 @@ CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o: /Users/xiongzheng/software/geant4
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4THnManager.icc:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4VNtupleManager.hh:
+
+/Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4THnManager.hh:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4TH3ToolsManager.hh:
 
@@ -15072,6 +15070,8 @@ CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o: /Users/xiongzheng/software/geant4
 /Library/Developer/CommandLineTools/usr/lib/clang/21/include/ptrcheck.h:
 
 /Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/PTL/JoinFunction.hh:
+
+/Users/xiongzheng/software/build/geant4-v11.4.0-install/include/Geant4/G4NuclideTable.hh:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug_utils/randomize_range.h:
 

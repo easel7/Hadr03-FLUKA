@@ -21,4 +21,4 @@ cd "$build_dir"
 # One macro per command. Copy this line to add more runs.
 # $exe $macro_dir/Deuteron_10GeV.mac
 # "$exe" "$macro_dir/He4_10GeV.mac"
-"$exe" "$macro_dir/Proton_10GeV.mac"
+"$exe" "$macro_dir/Proton_100000GeV.mac"
