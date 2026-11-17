@@ -42,7 +42,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/xiongzheng/software/build/geant4-v11.4.0-install/lib"
+      -delete_rpath "/Users/xiongzheng/software/build/geant4-v11.4.3-install/lib"
       -delete_rpath "/opt/homebrew/opt/qt/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Hadr03")
     if(CMAKE_INSTALL_DO_STRIP)

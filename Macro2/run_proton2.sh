@@ -17,7 +17,7 @@ export G4RUN_MANAGER_TYPE=Serial
 
 # Run from build-fluka because the macros write ROOT files to ../Root2.
 cd "$build_dir"
-
+# export HADR03_DEBUG_FLUKA_STATE=1
 # One macro per command. Copy this line to add more runs.
 # $exe $macro_dir/Deuteron_10GeV.mac
 # $exe $macro_dir/Deuteron_12GeV.mac
@@ -109,7 +109,7 @@ cd "$build_dir"
 # $exe $macro_dir/He4_80000GeV.mac
 # $exe $macro_dir/He4_100000GeV.mac
 
-# $exe $macro_dir/Proton_10GeV.mac
+$exe $macro_dir/Proton_10GeV.mac
 # $exe $macro_dir/Proton_12GeV.mac
 # $exe $macro_dir/Proton_16GeV.mac
 # $exe $macro_dir/Proton_20GeV.mac
@@ -152,4 +152,9 @@ cd "$build_dir"
 # $exe $macro_dir/Proton_50000GeV.mac
 # $exe $macro_dir/Proton_63000GeV.mac
 # $exe $macro_dir/Proton_80000GeV.mac
-$exe $macro_dir/Proton_100000GeV.mac
+# $exe $macro_dir/Proton_100000GeV.mac
+
+
+git add -A
+git commit -m "Auto update $(date '+%F %T')" || true
+git push
