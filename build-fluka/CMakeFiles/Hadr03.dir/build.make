@@ -274,7 +274,21 @@ Hadr03_OBJECTS = \
 "CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o"
 
 # External object files for target Hadr03
-Hadr03_EXTERNAL_OBJECTS =
+Hadr03_EXTERNAL_OBJECTS = \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/asciir.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/dpmjex.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/evdini.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/eventd.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/eveout.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/eveqmd.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/evqmdi.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/glaubr.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/idd2f.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/idf2d.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/rqm2pr.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/rqmdex.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/zrdpcm.o" \
+"/Users/xiongzheng/software/fluka4-5.2/lib/interface/zrrqcm.o"
 
 Hadr03: CMakeFiles/Hadr03.dir/Hadr03.cc.o
 Hadr03: CMakeFiles/Hadr03.dir/src/ActionInitialization.cc.o
@@ -289,6 +303,20 @@ Hadr03: CMakeFiles/Hadr03.dir/src/Run.cc.o
 Hadr03: CMakeFiles/Hadr03.dir/src/RunAction.cc.o
 Hadr03: CMakeFiles/Hadr03.dir/src/RunMessenger.cc.o
 Hadr03: CMakeFiles/Hadr03.dir/src/SteppingAction.cc.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/asciir.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/dpmjex.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/evdini.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/eventd.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/eveout.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/eveqmd.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/evqmdi.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/glaubr.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/idd2f.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/idf2d.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/rqm2pr.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/rqmdex.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/zrdpcm.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/interface/zrrqcm.o
 Hadr03: CMakeFiles/Hadr03.dir/build.make
 Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/obj/interface/fluka_interface.o
 Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/obj/interface/FLUKAParticleTable.o
@@ -310,7 +338,10 @@ Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/F
 Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/obj/oauxfw.o
 Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/obj/closef.o
 Hadr03: /Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/obj/flushf.o
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/librqmd.a
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/libDPMJET.a
 Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/libfluka_no_random.a
+Hadr03: /Users/xiongzheng/software/fluka4-5.2/lib/libfluka.a
 Hadr03: /opt/homebrew/opt/gcc/lib/gcc/current/libstdc++.dylib
 Hadr03: /Users/xiongzheng/software/build/geant4-v11.4.3-install/lib/libG4Tree.dylib
 Hadr03: /Users/xiongzheng/software/build/geant4-v11.4.3-install/lib/libG4FR.dylib

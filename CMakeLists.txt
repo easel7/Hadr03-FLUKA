@@ -48,11 +48,34 @@ add_executable(Hadr03 Hadr03.cc ${sources} ${headers})
 if(G4_USE_FLUKA)
   # The FLUKA archive contains GCC-built C++ code. Keep its runtime for that
   # archive; the FLUKA-G4 bridge objects are built with clang++ to match G4.
+  set(FLUKA_ROOT "$ENV{FLUKA_PATH}")
+  if(NOT FLUKA_ROOT)
+    message(FATAL_ERROR "FLUKA_PATH is unset; source the FLUKA environment before configuring Hadr03")
+  endif()
+  find_library(FLUKA_NO_RANDOM_LIBRARY NAMES fluka_no_random
+    HINTS "${FLUKA_ROOT}/lib" REQUIRED)
+  find_library(FLUKA_RELEASE_LIBRARY NAMES fluka
+    HINTS "${FLUKA_ROOT}/lib" REQUIRED)
+  find_library(FLUKA_DPMJET_LIBRARY NAMES DPMJET
+    HINTS "${FLUKA_ROOT}/lib" REQUIRED)
+  find_library(FLUKA_RQMD_LIBRARY NAMES rqmd
+    HINTS "${FLUKA_ROOT}/lib" REQUIRED)
+  file(GLOB FLUKA_ION_GENERATOR_OBJECTS "${FLUKA_ROOT}/lib/interface/*.o")
+  if(NOT FLUKA_ION_GENERATOR_OBJECTS)
+    message(FATAL_ERROR "FLUKA DPMJET/RQMD interface objects not found under ${FLUKA_ROOT}/lib/interface")
+  endif()
+  # DPMJET/RQMD are separate from libfluka_no_random. Add FLUKA's bridge
+  # objects and libraries in the same order used by its lfluka -d linker;
+  # the release archive supplies FLUKA's fl64* helpers used by DPMJET init.
+  target_sources(Hadr03 PRIVATE ${FLUKA_ION_GENERATOR_OBJECTS})
+  list(FILTER FLUKAInterface_LIBRARIES EXCLUDE REGEX "libfluka_no_random\\.a$|^-lgfortran$")
   find_library(GCC_CXX_RUNTIME NAMES stdc++
     HINTS "$ENV{FLUKA_PATH}/lib" /opt/homebrew/opt/gcc/lib/gcc/current
     REQUIRED)
   target_link_libraries(Hadr03 PRIVATE
-    ${FLUKAInterface_LIBRARIES} ${GCC_CXX_RUNTIME} ${Geant4_LIBRARIES})
+    ${FLUKAInterface_LIBRARIES}
+    ${FLUKA_RQMD_LIBRARY} ${FLUKA_DPMJET_LIBRARY} ${FLUKA_NO_RANDOM_LIBRARY}
+    ${FLUKA_RELEASE_LIBRARY} gfortran ${GCC_CXX_RUNTIME} ${Geant4_LIBRARIES})
 else()
   target_link_libraries(Hadr03 ${Geant4_LIBRARIES})
 endif()

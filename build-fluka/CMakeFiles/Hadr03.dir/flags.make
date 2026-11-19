@@ -6,7 +6,5 @@ CXX_DEFINES = -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_R
 
 CXX_INCLUDES = -I/Users/xiongzheng/software/geant4/examples/extended/hadronic/Hadr03/include -I/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/cpp_utils -I/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka5/hadronic_interactions/interface_to_G4 -I/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_bridges -I/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/source/fluka_G4_physics_list -isystem /Users/xiongzheng/software/build/geant4-v11.4.3-install/include/Geant4 -isystem /opt/homebrew/opt/qt/include/QtCore -iframework /opt/homebrew/opt/qt/lib -isystem /opt/homebrew/opt/qt/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qt/include/QtGui -isystem /opt/homebrew/opt/qt/include/QtWidgets -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2
 
-CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -idirafter /opt/homebrew/opt/qt/include
-
-CXX_FLAGS = -std=gnu++17 -arch arm64 -idirafter /opt/homebrew/opt/qt/include
+CXX_FLAGS = -std=gnu++17 -idirafter /opt/homebrew/opt/qt/include
 

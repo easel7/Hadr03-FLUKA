@@ -1,0 +1,42 @@
+  
+  ---> initializing DPMJET from FLUKA
+       LOUDPM,IFDPM,LESDPM           19           1           0
+  
+   0.0000000000000000        0.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000                 
+ +-----------------------------------------------------------------------+
+ |                                                                       |
+ |                       DPMJET-III version 19.3.8                       |
+ |                                                                       |
+ |                      (Last change:  10 Jun 2025)                      |
+ |                                                                       |
+ |            Authors:                                                   |
+ |                     Stefan Roesler     (CERN)                         |
+ |                     Anatoli Fedynitch (ASIoP)                         |
+ |                     Ralph Engel        (KIT)                          |
+ |                     Johannes Ranft     (Siegen Univ.)                 |
+ |                                                                       |
+ |        https://github.com/DPMJET/DPMJET                           |
+ |                                                                       |
+ +-----------------------------------------------------------------------+
+ | Contact: @github 
+ +-----------------------------------------------------------------------+
+
+
+  ===================================================
+                                                     
+    ----        PHOJET  19.3.8       ----   
+                                                     
+  ===================================================
+      Authors: Ralph Engel         (KIT)
+               Anatoli Fedynitch  (ASIoP)
+               Johannes Ranft      (Siegen Univ.)
+               Stefan Roesler      (CERN)
+  ---------------------------------------------------
+    bug reports, support and updates on:
+      https://github.com/dpmjet/dpmjet
+  ===================================================
+    Date: 2025/06/10
+    Revision: 19.3.8
+    Code with interface to PYTHIA 6.4.27
+  ===================================================
+

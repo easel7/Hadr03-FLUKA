@@ -311,32 +311,51 @@ File Version:_    45.1
 
  *** Neutrino xsec file header:       Neutrino Xsec file from nundis + nunres ***
  *** Neutrino xsec file generated on:  DATE:  6/ 1/15,  TIME: 12:53:31 ***
+  
+  ---> requested particle production model RQMD
+       orphaned/modified version 2.4
+       implementation under work, oct-02
+  
+  ---> RQMD   flag to enable input   default =0
+              change with WHAT(4)   0.0000000000000000     
+  
+  ---> RQMD   default standard output unit=none
+              change with WHAT(5)   0.0000000000000000     
+  
+  ---> RQMD   default extra output unit=none
+              change with WHAT(6)   0.0000000000000000     
+  
+  ---> initializing RQMD  -rqmd-
+       LOU,IOU,IOE,LIN,IFC,IOPRQM,IPR,THPR1,THPR2 F          -1          -1 F           0     1162003           1   5.0000000000000001E-004  0.10000000000000001     
+  
+       RQMD init successfully finished
+  
+  ---> requested particle production model DPMJET
+       implementation under work, apr-04
+       (evdini)    20000.000000000000        5.0000000000000000     
+          0.0000000000000000        0.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000                 
+  
+  ---> DPMJET default Glauber parameter mode
+              0: new (default),  1: old way
+              change with WHAT(1)   0.0000000000000000     
+  
+  ---> DPMJET output on unit=19 by default
+              change unit with WHAT(2)   0.0000000000000000     
+  
+  ---> DPMJET output verbosity level
+              change with WHAT(3)   1.0000000000000000     
+  
+  ---> initializing DPMJET
+       LOUDPM,IFDPM           19           1
+       Max. initialization energy for DPMJET
+   606.90582135857494       GeV
+  
+  ---> DPMJET event generator version: see *_fort.19
 
+    Minimum kinetic energy for DPMJET:    5.000     +/-   0.5000     (GeV/n)
+    Minimum kinetic energy for rQMD  :   0.1250     +/-   2.5000E-02 (GeV/n)
     Minimum kinetic energy for BME   :   1.0000E-03 (GeV/n)
     Overall minimum kinetic energy for ion nuclear interactions:   1.0000E-03 (GeV/n)
+    Overall maximum kinetic energy for ion nuclear interactions:   1.0000E+30 (GeV/n)
 
 
-  *** Kaon: P_min > 1.5 GeV/c:           24   5.3590353507414594     
-  *** Kaon: P_min > 1.5 GeV/c:           24   6.2338473664145058     
-  *** Kaon: P_min > 1.5 GeV/c:           24   5.3118122187311503     
-  *** Kaon: P_min > 1.5 GeV/c:           24   6.0301993020143358     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.8052370132221616     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.7239693632391848     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.7838144385181960     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.1984783236539442     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.1069977143888718     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.3602617392703618     
-  *** Kbar: P_min > 1.8 GeV/c:           16   2.3639239946762487     
-  *** Kbar: P_min > 1.8 GeV/c:           16   1.9156121987821131     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.8995094665442482     
-  *** Kaon: P_min > 1.5 GeV/c:           15   2.0089365003640549     
-  *** Kaon: P_min > 1.5 GeV/c:           24   5.8173606271087817     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.8179620635983920     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.8305410119422501     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.7164267668200190     
-  *** Kbar: P_min > 1.8 GeV/c:           25   1.8889669525406476     
-  *** Kaon: P_min > 1.5 GeV/c:           24   1.6572786247643481     
- *** Frmbrk: we are dealing with a bag of            7      73.1102 identical nucleons, go on folks! ***
- *** Frmbrk: we are dealing with a bag of            7      75.3169 identical nucleons, go on folks! ***
- *** Frmbrk: a bag of            9
- *** Frmbrk: we are dealing with a bag of            7      62.5524 identical nucleons, go on folks! ***
