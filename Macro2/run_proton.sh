@@ -10,7 +10,7 @@ geant4_env="$geant4_bin/geant4.sh"
 fluka_bin="/Users/xiongzheng/software/fluka4-5.2/bin"
 fluka_env="/Users/xiongzheng/software/geant4/examples/extended/hadronic/FlukaCern/FlukaInterface/env_FLUKA_G4_interface.sh"
 
-macro="${1:-Deuteron_12GeV.mac}"
+macro="${1:-Deuteron_20GeV.mac}"
 if [[ -f "$macro" ]]; then
   macro_path="$(cd -- "$(dirname -- "$macro")" && pwd)/$(basename -- "$macro")"
 elif [[ -f "$macro_dir/$macro" ]]; then
